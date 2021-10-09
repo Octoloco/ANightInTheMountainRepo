@@ -19,9 +19,12 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
     private InputAction movement;
-
-
     public bool Fallin => falling;
+
+    [SerializeField] float sphereOffsetX;
+    [SerializeField] float sphereOffsetZ;
+    [SerializeField] float radius;
+
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
@@ -42,11 +45,23 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = true;
     }
+    void OnDrawGizmosSelected()
+    {
+        if (movement.ReadValue<Vector2>().magnitude > .3f)
+        {
+            Gizmos.color = Color.blue;
+            Vector3 result = new Vector3(transform.position.x + movement.ReadValue<Vector2>().x, transform.position.y, transform.position.z + movement.ReadValue<Vector2>().y);
+            Gizmos.DrawSphere(result, radius);
+        }
+        // Draw a yellow sphere at the transform's position
 
+    }
     private void FixedUpdate()
     {
+
         //Debug.Log(transform.TransformDirection(Vector3.down));
         Debug.DrawLine(new Vector3(transform.position.x - .4f, transform.position.y, transform.position.z), new Vector3(transform.position.x - .4f, transform.position.y - 20, transform.position.z), Color.green);
+
         if (falling)
         {
             Fall();
@@ -70,6 +85,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     moving = true;
                     canMove = false;
+
                     GetComponent<Rigidbody>().velocity = new Vector3(movement.ReadValue<Vector2>().x, 0, movement.ReadValue<Vector2>().y) * speed;
                 }
             }
@@ -122,6 +138,21 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private IEnumerator ActivateSphereCollider(Vector3 center)
+    {
+        int framesToWait = 2;
+        for (int i = 0; i < framesToWait; i++)
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(center, radius);
+            foreach (var hitCollider in hitColliders)
+            {
+                Debug.Log(hitCollider.name);
+            }
+            yield return new WaitForEndOfFrame();
+        }
+
+    }
+
     private void Fall()
     {
         if (transform.position.y > fallPositionY)
@@ -139,17 +170,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!dead)
         {
-            Debug.Log($"x factor is: {Mathf.Abs(transform.position.x - collision.transform.position.x)}");
-            Debug.Log($"z factor is: {Mathf.Abs(transform.position.z - collision.transform.position.z)}");
-            if (Mathf.Abs(transform.position.x - collision.transform.position.x) <= 0.5f || Mathf.Abs(transform.position.z - collision.transform.position.z) <= 0.5f)
+            //Debug.Log($"x factor is: {Mathf.Abs(transform.position.x - collision.transform.position.x)}");
+            //Debug.Log($"z factor is: {Mathf.Abs(transform.position.z - collision.transform.position.z)}");
+            //if (Mathf.Abs(transform.position.x - collision.transform.position.x) <= 0.5f || Mathf.Abs(transform.position.z - collision.transform.position.z) <= 0.5f)
+            //{
+            //}
+            if (collision.gameObject.CompareTag("spike"))
             {
-                if (collision.gameObject.CompareTag("spike"))
-                {
-                    transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
-                    Destroy(GetComponent<Rigidbody>());
-                    Destroy(this);
-                }
+                transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
+                Destroy(GetComponent<Rigidbody>());
+                Destroy(this);
             }
+
 
         }
     }
