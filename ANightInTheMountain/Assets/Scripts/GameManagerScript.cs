@@ -53,7 +53,7 @@ public class GameManagerScript : MonoBehaviour
 
 
         }
-        else if (player.Fallin && !iceAnimationActivate)
+        else if (player.falled && !iceAnimationActivate)
         {
             iceAnimationActivate = true;
             onFalling?.Invoke();

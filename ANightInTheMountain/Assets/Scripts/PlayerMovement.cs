@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private bool dead;
     private bool moving;
     private bool falling;
+    public bool falled;
 
     private PlayerInputActions playerInputActions;
     private InputAction movement;
@@ -180,8 +181,9 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            falled = true;
             Destroy(GetComponent<Rigidbody>());
-            Destroy(this);
+            Destroy(this, .5f);
         }
     }
 
