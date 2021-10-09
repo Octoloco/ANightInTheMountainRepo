@@ -99,6 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   fallSpeed: 3
+  fallPositionY: -0.7
 --- !u!65 &7617189755192629425
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private float speed;
     [SerializeField]
     private float fallSpeed;
-
+    [SerializeField]
+    private float fallPositionY;
     private bool canMove;
     private bool dead;
     private bool moving;
@@ -17,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
     private InputAction movement;
+   
 
+    public bool Fallin => falling;
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
@@ -118,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Fall()
     {
-        if (transform.position.y > -.5)
+        if (transform.position.y > fallPositionY)
         {
             transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
         }
