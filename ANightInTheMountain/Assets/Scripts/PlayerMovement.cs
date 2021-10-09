@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (GetComponent<Rigidbody>().velocity.x > 0)
                 {
-                    if (!Physics.Raycast(new Vector3(transform.position.x - .4f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    if (!Physics.Raycast(new Vector3(transform.position.x - .45f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
                     {
                         dead = true;
                         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (GetComponent<Rigidbody>().velocity.x < 0)
                 {
-                    if (!Physics.Raycast(new Vector3(transform.position.x + .4f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    if (!Physics.Raycast(new Vector3(transform.position.x + .45f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
                     {
                         dead = true;
                         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -102,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (GetComponent<Rigidbody>().velocity.z > 0)
                 {
-                    if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - .4f), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - .45f), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
                     {
                         dead = true;
                         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
                 }
                 else if (GetComponent<Rigidbody>().velocity.z < 0)
                 {
-                    if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + .4f), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + .45f), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
                     {
                         dead = true;
                         GetComponent<Rigidbody>().velocity = Vector3.zero;
