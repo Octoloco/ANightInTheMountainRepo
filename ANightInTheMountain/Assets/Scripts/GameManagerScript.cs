@@ -17,15 +17,36 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField] GameObject icePrefab;
     List<GameObject> currentIce = new List<GameObject>();
     bool iceAnimationActivate = true;
+    [Header("Souls events")]
+    [SerializeField] SoulsController soulsController;
+    [SerializeField] UnityEvent onAddedSoul;
+    [SerializeField] UnityEvent onRemoveSouls;
+
     private void Start()
     {
+        soulsController.soulsAdded = false;
+        soulsController.soulsRemove = false;
         onFalling.AddListener(IceAnimation);
     }
     void Update()
     {
+        if(soulsController.soulsAdded)
+        {
+            Debug.Log("OnUpdate added");
+            soulsController.soulsAdded=false;
+            onAddedSoul.Invoke();
+          
+        }
+        if (soulsController.soulsRemove)
+        {
+            Debug.Log("OnUpdate remove");
+            soulsController.soulsRemove = false;
+          
+            onRemoveSouls.Invoke();
+        }
         if (player == null)
         {
-           
+
             playerInstantiation = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
             player = playerInstantiation.GetComponent<PlayerMovement>();
             iceAnimationActivate = false;
@@ -36,7 +57,7 @@ public class GameManagerScript : MonoBehaviour
         {
             iceAnimationActivate = true;
             onFalling?.Invoke();
-          
+
         }
     }
 
@@ -47,7 +68,12 @@ public class GameManagerScript : MonoBehaviour
         GameObject tempIce = Instantiate(icePrefab, spwanPosition, Quaternion.identity) as GameObject;
 
         currentIce.Add(icePrefab);
-        
 
+
+    }
+
+    public void TestMessageForSouls(string message)
+    {
+        Debug.Log(message);
     }
 }

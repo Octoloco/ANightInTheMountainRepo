@@ -227,6 +227,8 @@ MonoBehaviour:
   speed: 7
   fallSpeed: 3
   fallPositionY: 0
+  scaleSphereFactor: 0.5
+  radius: 0.2
 --- !u!54 &7617189755192629424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -254,5 +256,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.48, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.78271204, z: 1}
+  m_Center: {x: 0, y: -0.15135601, z: 0}
