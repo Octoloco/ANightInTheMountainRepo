@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
     private InputAction movement;
-   
+
 
     public bool Fallin => falling;
     private void Awake()
@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Debug.Log(transform.TransformDirection(Vector3.down));
+        Debug.DrawLine(new Vector3(transform.position.x - .4f, transform.position.y, transform.position.z), new Vector3(transform.position.x - .4f, transform.position.y - 20, transform.position.z), Color.green);
         if (falling)
         {
             Fall();
@@ -82,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (GetComponent<Rigidbody>().velocity.x > 0)
                 {
-                    if (!Physics.Raycast(new Vector3(transform.position.x -.4f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    if (!Physics.Raycast(new Vector3(transform.position.x - .4f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
                     {
                         dead = true;
                         GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -152,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
             canMove = true;
         }
 
-        if (GetComponent<Rigidbody>().velocity.magnitude <= .1f)
+        if (GetComponent<Rigidbody>().velocity.magnitude <= .15f)
         {
             moving = false;
         }

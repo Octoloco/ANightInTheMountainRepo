@@ -42,7 +42,8 @@ public class GameManagerScript : MonoBehaviour
 
     public void IceAnimation()
     {
-        Vector3 spwanPosition = new Vector3(player.transform.position.x, -0.5f, player.transform.position.z);
+        Debug.Log(player.transform.position);
+        Vector3 spwanPosition = new Vector3(player.transform.position.x, 0, player.transform.position.z);
         GameObject tempIce = Instantiate(icePrefab, spwanPosition, Quaternion.identity) as GameObject;
 
         currentIce.Add(icePrefab);
