@@ -227,6 +227,9 @@ MonoBehaviour:
   speed: 7
   fallSpeed: 3
   fallPositionY: -0.7
+  sphereOffsetX: 0
+  sphereOffsetZ: 0
+  radius: 0.2
 --- !u!54 &7617189755192629424
 Rigidbody:
   m_ObjectHideFlags: 0
