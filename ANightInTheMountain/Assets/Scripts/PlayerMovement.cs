@@ -7,8 +7,13 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float fallSpeed;
 
+    private bool canMove;
+    private bool dead;
     private bool moving;
+    private bool falling;
 
     private PlayerInputActions playerInputActions;
     private InputAction movement;
@@ -31,37 +36,122 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        moving = false;
+        canMove = true;
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (falling)
+        {
+            Fall();
+        }
+        else
+        {
+            Move();
+        }
     }
 
     private void Move()
     {
-        if (!moving)
+        if (canMove)
         {
-            Debug.Log($"Can move with value {movement.ReadValue<Vector2>().magnitude}");
-            if (movement.ReadValue<Vector2>().magnitude > .3f)
+            if (movement.ReadValue<Vector2>().magnitude > .3f && !dead)
             {
                 if (!(movement.ReadValue<Vector2>().x > .2f && movement.ReadValue<Vector2>().y > .2f) &&
-                    !(movement.ReadValue<Vector2>().x < -.2f && movement.ReadValue<Vector2>().y < -.2f) && 
-                    !(movement.ReadValue<Vector2>().x > .2f && movement.ReadValue<Vector2>().y < -.2f) && 
+                    !(movement.ReadValue<Vector2>().x < -.2f && movement.ReadValue<Vector2>().y < -.2f) &&
+                    !(movement.ReadValue<Vector2>().x > .2f && movement.ReadValue<Vector2>().y < -.2f) &&
                     !(movement.ReadValue<Vector2>().x < -.2f && movement.ReadValue<Vector2>().y > .2f))
                 {
                     moving = true;
+                    canMove = false;
                     GetComponent<Rigidbody>().velocity = new Vector3(movement.ReadValue<Vector2>().x, 0, movement.ReadValue<Vector2>().y) * speed;
+                }
+            }
+        }
+        else
+        {
+            if (moving)
+            {
+                int layerMask = 1 << 8;
+                layerMask = ~layerMask;
+                RaycastHit hit;
+
+                if (GetComponent<Rigidbody>().velocity.x > 0)
+                {
+                    if (!Physics.Raycast(new Vector3(transform.position.x -.4f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    {
+                        dead = true;
+                        GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        falling = true;
+                    }
+                }
+                else if (GetComponent<Rigidbody>().velocity.x < 0)
+                {
+                    if (!Physics.Raycast(new Vector3(transform.position.x + .4f, transform.position.y, transform.position.z), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    {
+                        dead = true;
+                        GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        falling = true;
+                    }
+                }
+                else if (GetComponent<Rigidbody>().velocity.z > 0)
+                {
+                    if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z - .4f), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    {
+                        dead = true;
+                        GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        falling = true;
+                    }
+                }
+                else if (GetComponent<Rigidbody>().velocity.z < 0)
+                {
+                    if (!Physics.Raycast(new Vector3(transform.position.x, transform.position.y, transform.position.z + .4f), transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity, layerMask))
+                    {
+                        dead = true;
+                        GetComponent<Rigidbody>().velocity = Vector3.zero;
+                        falling = true;
+                    }
                 }
             }
         }
     }
 
+    private void Fall()
+    {
+        if (transform.position.y > -.5)
+        {
+            transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Destroy(GetComponent<Rigidbody>());
+            Destroy(this);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        moving = false;
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        if (!dead)
+        {
+            if (collision.gameObject.CompareTag("spike"))
+            {
+                Destroy(GetComponent<Rigidbody>());
+                Destroy(this);
+            }
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (!dead && !moving)
+        {
+            canMove = true;
+        }
+
+        if (GetComponent<Rigidbody>().velocity.magnitude <= .1f)
+        {
+            moving = false;
+        }
     }
 }
 
