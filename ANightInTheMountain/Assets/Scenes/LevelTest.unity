@@ -15812,7 +15812,7 @@ MonoBehaviour:
   onFalling:
     m_PersistentCalls:
       m_Calls: []
-  icePrefab: {fileID: 5885241100195429682, guid: 12d6c4a64b213cd449571810788cd17e, type: 3}
+  icePrefab: {fileID: 5885241100195429682, guid: c66d0200b75c10d47a76fc7527c7929b, type: 3}
 --- !u!4 &2106435976
 Transform:
   m_ObjectHideFlags: 0
