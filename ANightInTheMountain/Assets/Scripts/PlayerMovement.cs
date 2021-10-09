@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!moving)
         {
+            Debug.Log($"Can move with value {movement.ReadValue<Vector2>().magnitude}");
             if (movement.ReadValue<Vector2>().magnitude > .3f)
             {
                 if (!(movement.ReadValue<Vector2>().x > .2f && movement.ReadValue<Vector2>().y > .2f) &&
