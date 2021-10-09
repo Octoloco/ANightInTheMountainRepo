@@ -139,11 +139,18 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!dead)
         {
-            if (collision.gameObject.CompareTag("spike"))
+            Debug.Log($"x factor is: {Mathf.Abs(transform.position.x - collision.transform.position.x)}");
+            Debug.Log($"z factor is: {Mathf.Abs(transform.position.z - collision.transform.position.z)}");
+            if (Mathf.Abs(transform.position.x - collision.transform.position.x) <= 0.5f || Mathf.Abs(transform.position.z - collision.transform.position.z) <= 0.5f)
             {
-                Destroy(GetComponent<Rigidbody>());
-                Destroy(this);
+                if (collision.gameObject.CompareTag("spike"))
+                {
+                    transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
+                    Destroy(GetComponent<Rigidbody>());
+                    Destroy(this);
+                }
             }
+
         }
     }
 
