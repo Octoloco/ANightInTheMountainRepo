@@ -21142,7 +21142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1465546774
 Transform:
   m_ObjectHideFlags: 0
@@ -28178,6 +28178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_IceCube (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f990eab90bb83e84e85c4de5eb7a4f40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f990eab90bb83e84e85c4de5eb7a4f40, type: 3}
 --- !u!4 &2002785649 stripped
@@ -29784,6 +29788,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 889043186}
   playerPrefab: {fileID: 7617189755192629436, guid: 0b2be3987325f874baa4734a34e9e91b, type: 3}
+  onFalling:
+    m_PersistentCalls:
+      m_Calls: []
+  icePrefab: {fileID: 5574759018086782384, guid: ad63af031f2cd25419381d872f3b8091, type: 3}
 --- !u!4 &2106435976
 Transform:
   m_ObjectHideFlags: 0
