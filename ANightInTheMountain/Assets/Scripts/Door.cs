@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField] UnityEvent onSucces;
+    [SerializeField] UnityEvent onSuccess;
     [SerializeField] UnityEvent onFail;
     [SerializeField] SoulsController souls;
     [SerializeField] int minimunSouls;
@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (souls.CurrentSouls >= minimunSouls)
-            onSucces?.Invoke();
+            onSuccess?.Invoke();
         else
             onFail.Invoke();
     }
