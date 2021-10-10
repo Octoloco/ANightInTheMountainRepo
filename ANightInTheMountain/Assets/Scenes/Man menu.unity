@@ -821,22 +821,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'antorcha '
       objectReference: {fileID: 0}
-    - target: {fileID: 7556412523691487125, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556412523691487125, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.01455
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556412523691487130, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
-      propertyPath: m_Range
-      value: 10.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556412523691487130, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
-      propertyPath: m_Intensity
-      value: 1.69
-      objectReference: {fileID: 0}
     - target: {fileID: 8023017990687124918, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -883,24 +867,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
---- !u!1 &707924657 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7556412523691487124, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
-  m_PrefabInstance: {fileID: 695641267}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &707924660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 707924657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9ed023afd59ea145ab8ad95d14ce7c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
 --- !u!1 &1067453647
 GameObject:
   m_ObjectHideFlags: 0
