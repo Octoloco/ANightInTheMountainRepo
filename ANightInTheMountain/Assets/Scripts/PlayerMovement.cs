@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float radius;
 
+    [SerializeField] UnityEvent onPlayerDied;
+
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
@@ -46,23 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = true;
     }
-    void OnDrawGizmosSelected()
-    {
-        if (movement.ReadValue<Vector2>().magnitude > .3f)
-        {
-            Gizmos.color = Color.blue;
-            Debug.Log($"InputVALUE {movement.ReadValue<Vector2>()}");
-            Vector3 result = movement.ReadValue<Vector2>().normalized * scaleSphereFactor;
-            Debug.Log($"Vector {result}");
-            result = new Vector3(result.x, 0, result.y);
-            Debug.Log($"Normilize Vector with scale factor {result}");
-            result += transform.position;
-            Debug.Log($"Center {result}");
-            Gizmos.DrawSphere(result, radius);
-        }
-        // Draw a yellow sphere at the transform's position
-
-    }
+  
     private void FixedUpdate()
     {
 
@@ -71,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (falling)
         {
+           
             Fall();
         }
         else
@@ -181,6 +168,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            falling = false;
+            onPlayerDied?.Invoke();
             falled = true;
             Destroy(GetComponent<Rigidbody>());
             Destroy(this, .5f);
@@ -204,6 +193,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (collision.gameObject.CompareTag("spike"))
         {
+            onPlayerDied?.Invoke();
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
             Destroy(GetComponent<Rigidbody>());
             Destroy(this);
