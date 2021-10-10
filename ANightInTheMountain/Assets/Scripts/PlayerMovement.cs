@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] UnityEvent onPlayerDied;
     [SerializeField] UnityEvent onPlayerSlide;
     [SerializeField] UnityEvent onPlayerStop;
+    [SerializeField] UnityEvent onPlayerSpike;
     bool setSlideEvent;
     bool setStopEvent;
 
@@ -258,6 +259,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("spike"))
         {
+            onPlayerSpike.Invoke();
             onPlayerDied?.Invoke();
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
             Destroy(GetComponent<Rigidbody>());
