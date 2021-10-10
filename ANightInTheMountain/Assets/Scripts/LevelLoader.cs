@@ -26,7 +26,7 @@ public class LevelLoader : MonoBehaviour
     }
     public void ReloadCurrentScene()
     {
-
+        StartCoroutine(LoadCurrentScene());
     }
     public void LoadNextLevel()
     {
