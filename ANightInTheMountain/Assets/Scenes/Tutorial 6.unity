@@ -1770,6 +1770,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (4)
@@ -2558,6 +2562,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (1)
@@ -3332,6 +3340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (11)
@@ -8504,6 +8516,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (10)
@@ -8656,6 +8672,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (8)
@@ -10404,6 +10424,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (7)
@@ -12735,6 +12759,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes
@@ -13578,6 +13606,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (3)
@@ -14144,6 +14176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (6)
@@ -15986,6 +16022,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (9)
@@ -17129,6 +17169,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (5)
@@ -17926,6 +17970,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f32a0946b23c863439fb3a2344e4bfb5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7c2e83ec7d964d94a8f8145484c4750a, type: 3}
       propertyPath: m_Name
       value: SM_IceSpikes (2)
