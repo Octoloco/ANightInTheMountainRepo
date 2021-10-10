@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] UnityEvent onPlayerDied;
     [SerializeField] UnityEvent onPlayerSlide;
     [SerializeField] UnityEvent onPlayerStop;
+    [SerializeField] UnityEvent onPlayerSpike;
     bool setSlideEvent;
     bool setStopEvent;
 
@@ -94,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GetComponent<Rigidbody>() == null)
+            return;
         if (GetComponent<Rigidbody>().velocity.x > 0)
         {
             sprite.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
@@ -114,7 +117,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-
+        if (GetComponent<Rigidbody>() == null)
+            return;
         if (canMove)
         {
             if (movement.ReadValue<Vector2>().magnitude > .3f && !dead)
@@ -217,6 +221,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (transform.position.y > fallPositionY)
         {
+            GetComponent<BoxCollider>().isTrigger = true;
             transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
         }
         else
@@ -258,6 +263,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("spike"))
         {
+            onPlayerSpike.Invoke();
             onPlayerDied?.Invoke();
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
             Destroy(GetComponent<Rigidbody>());
