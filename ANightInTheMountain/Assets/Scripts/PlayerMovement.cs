@@ -46,7 +46,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GameObject.Find("PausePanel"))
         {
-            GameObject.Find("PausePanel").GetComponent<PausePanel>().Show();
+            if (GameObject.Find("PausePanel").GetComponent<PausePanel>().isShowing)
+            {
+                GameObject.Find("PausePanel").GetComponent<PausePanel>().Hide();
+            }
+            else
+            {
+                GameObject.Find("PausePanel").GetComponent<PausePanel>().Show();
+            }
         }
     }
 
