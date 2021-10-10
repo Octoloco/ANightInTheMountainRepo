@@ -94,8 +94,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 3.506438}
-  m_Center: {x: 1.9324587e-15, y: 0, z: -1.2532206}
+  m_Size: {x: 0.8384923, y: 1, z: 3.506438}
+  m_Center: {x: 0, y: 0, z: -1.2532202}
 --- !u!114 &1759163340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +148,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Fail
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: ReloadCurrentScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   souls: {fileID: 11400000, guid: 1e1de0084d247844a863e35d5b13d889, type: 2}
