@@ -31,18 +31,18 @@ public class GameManagerScript : MonoBehaviour
     }
     void Update()
     {
-        if(soulsController.soulsAdded)
+        if (soulsController.soulsAdded)
         {
             Debug.Log("OnUpdate added");
-            soulsController.soulsAdded=false;
+            soulsController.soulsAdded = false;
             onAddedSoul.Invoke();
-          
+
         }
         if (soulsController.soulsRemove)
         {
             Debug.Log("OnUpdate remove");
             soulsController.soulsRemove = false;
-          
+
             onRemoveSouls.Invoke();
         }
         if (player == null)
@@ -57,8 +57,13 @@ public class GameManagerScript : MonoBehaviour
         else if (player.falled && !iceAnimationActivate)
         {
             iceAnimationActivate = true;
+        
             onFalling?.Invoke();
 
+        }
+        if(player.Fallin)
+        {
+            player.transform.GetChild(0).GetComponent<Animator>().SetTrigger("Fall");
         }
     }
 

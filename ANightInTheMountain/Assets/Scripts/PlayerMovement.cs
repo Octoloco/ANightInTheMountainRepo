@@ -95,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (GetComponent<Rigidbody>() == null)
+            return;
         if (GetComponent<Rigidbody>().velocity.x > 0)
         {
             sprite.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
@@ -115,7 +117,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-
+        if (GetComponent<Rigidbody>() == null)
+            return;
         if (canMove)
         {
             if (movement.ReadValue<Vector2>().magnitude > .3f && !dead)
@@ -218,6 +221,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (transform.position.y > fallPositionY)
         {
+            GetComponent<BoxCollider>().isTrigger = true;
             transform.Translate(Vector3.down * fallSpeed * Time.deltaTime);
         }
         else
