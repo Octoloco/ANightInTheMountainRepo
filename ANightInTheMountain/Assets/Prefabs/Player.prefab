@@ -163,6 +163,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onPlayerSlide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6902523156530783948}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Slide
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPlayerStop:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6902523156530783948}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Idle
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &7617189755192629424
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -251,10 +281,25 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 65bbc93d7dcf4a94f9042e3bc3334d7a, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 79a86042a8e8ffd4e918b19f48888b4b, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
+        'mixamorig:LeftHandThumb2'\n\tTransform 'mixamorig:LeftHandIndex1'\n\tTransform
+        'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
+        'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform
+        'mixamorig:LeftLeg'\n\tand more ...\n\tFrom animation clip 'Zombie Death'"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a86042a8e8ffd4e918b19f48888b4b, type: 3}
 --- !u!4 &660512823588240566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 79a86042a8e8ffd4e918b19f48888b4b, type: 3}
+  m_PrefabInstance: {fileID: 1053883633161231197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6902523156530783948 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 79a86042a8e8ffd4e918b19f48888b4b, type: 3}
   m_PrefabInstance: {fileID: 1053883633161231197}
   m_PrefabAsset: {fileID: 0}

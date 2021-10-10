@@ -30,6 +30,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float radius;
 
     [SerializeField] UnityEvent onPlayerDied;
+    [SerializeField] UnityEvent onPlayerSlide;
+    [SerializeField] UnityEvent onPlayerStop;
+    bool setSlideEvent;
+    bool setStopEvent;
 
     private void Awake()
     {
@@ -102,12 +106,16 @@ public class PlayerMovement : MonoBehaviour
                     canMove = false;
                     Vector3 result = movement.ReadValue<Vector2>().normalized * scaleSphereFactor;
 
-
+                    if (!setStopEvent)
+                    {
+                        setStopEvent = true;
+                        onPlayerStop.Invoke();
+                    }
                     result = new Vector3(result.x, 0, result.y);
 
                     result += transform.position;
                     StartCoroutine(ActivateSphereCollider(result));
-
+                    setSlideEvent = false;
                     GetComponent<Rigidbody>().velocity = new Vector3(movement.ReadValue<Vector2>().x, 0, movement.ReadValue<Vector2>().y) * speed;
                 }
             }
@@ -116,6 +124,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if (moving)
             {
+                setStopEvent = false;
+                if (!setSlideEvent)
+                {
+                    setSlideEvent = true;
+                    onPlayerSlide.Invoke();
+                }
                 setPosition = false;
                 int layerMask = 1 << 8;
                 layerMask = ~layerMask;
