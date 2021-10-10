@@ -92,19 +92,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GetComponent<Rigidbody>().velocity.x > 0)
         {
-            sprite.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            sprite.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
         }
         else if (GetComponent<Rigidbody>().velocity.x < 0)
         {
-            sprite.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            sprite.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
         }
         else if (GetComponent<Rigidbody>().velocity.z > 0)
         {
-            sprite.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+            sprite.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
         }
         else if (GetComponent<Rigidbody>().velocity.z < 0)
         {
-            sprite.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            sprite.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
     }
 
