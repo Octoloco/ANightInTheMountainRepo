@@ -11,6 +11,7 @@ public class SoulsController : ScriptableObject
 
     [HideInInspector] public bool soulsAdded;
     [HideInInspector] public bool soulsRemove;
+    [HideInInspector] public int CurrentSouls=>currentSouls;
     public void AddSouls(int add = 0)
     {
         currentSouls += add == 0 ? addFactor : add;
