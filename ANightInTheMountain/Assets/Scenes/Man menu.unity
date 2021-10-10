@@ -5659,15 +5659,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7556412524172733587, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
       propertyPath: ForceModule.x.scalar
-      value: 2.91
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7556412524172733587, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
       propertyPath: InitialModule.startSize.scalar
       value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 7556412524172733587, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556412524172733587, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 9.48
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8023017990687124918, guid: a003aa53ebf8c0147ba945ab49cfda75, type: 3}
       propertyPath: m_RootOrder
@@ -6242,7 +6246,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 3
   Loop: 1
   Mute: 0
   Spatialize: 0
