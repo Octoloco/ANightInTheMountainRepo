@@ -227,8 +227,24 @@ MonoBehaviour:
   speed: 7
   fallSpeed: 3
   fallPositionY: 0
+  falled: 0
   scaleSphereFactor: 0.5
   radius: 0.2
+  onPlayerDied:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 1e1de0084d247844a863e35d5b13d889, type: 2}
+        m_TargetAssemblyTypeName: SoulsController, Assembly-CSharp
+        m_MethodName: Remove
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!54 &7617189755192629424
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class SoulsController : ScriptableObject
     }
     public void Remove(int remove = 0)
     {
-        currentSouls += remove == 0 ? removeFactor : remove;
+        currentSouls -= remove == 0 ? removeFactor : remove;
         currentSouls = currentSouls <= 0 ? 0 : currentSouls;
         soulsRemove = true;
     }
