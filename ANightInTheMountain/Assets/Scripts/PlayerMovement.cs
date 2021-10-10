@@ -128,11 +128,7 @@ public class PlayerMovement : MonoBehaviour
                     canMove = false;
                     Vector3 result = movement.ReadValue<Vector2>().normalized * scaleSphereFactor;
 
-                    if (!setStopEvent)
-                    {
-                        setStopEvent = true;
-                        onPlayerStop.Invoke();
-                    }
+                   
                     result = new Vector3(result.x, 0, result.y);
 
                     result += transform.position;
@@ -235,6 +231,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!setStopEvent)
+        {
+            setStopEvent = true;
+            onPlayerStop.Invoke();
+        }
         if (!dead)
         {
 
