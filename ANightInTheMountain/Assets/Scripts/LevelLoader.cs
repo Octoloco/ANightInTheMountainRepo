@@ -24,7 +24,10 @@ public class LevelLoader : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void ReloadCurrentScene()
+    {
 
+    }
     public void LoadNextLevel()
     {
         StartCoroutine(LoadNextScene());
@@ -50,7 +53,7 @@ public class LevelLoader : MonoBehaviour
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         int nextScene = currentScene + 1 >= maxScenes ? 0 : currentScene + 1;
 
-   
+
         foreach (Animator a in animatorsList)
         {
             a.SetTrigger("start");
@@ -58,6 +61,18 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(nextScene);
     }
+    IEnumerator LoadCurrentScene()
+    {
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
 
+
+
+        foreach (Animator a in animatorsList)
+        {
+            a.SetTrigger("start");
+        }
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(currentScene);
+    }
 
 }
