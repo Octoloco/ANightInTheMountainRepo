@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c26e4692ac7bbd84d814ae73a8a6ab94, type: 3}
   m_Name: SoulsController
   m_EditorClassIdentifier: 
-  currentSouls: 85
+  currentSouls: 100
   addFactor: 15
   removeFactor: 15
   soulsAdded: 0
