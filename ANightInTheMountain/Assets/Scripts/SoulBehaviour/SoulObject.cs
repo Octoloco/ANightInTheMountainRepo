@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SoulObject : MonoBehaviour
-    
+
 {
     [SerializeField] SoulsController soulsController;
     private void OnTriggerEnter(Collider other)
     {
         soulsController.AddSouls();
+        Destroy(gameObject.transform.parent.gameObject, 0.25f);
     }
 }
