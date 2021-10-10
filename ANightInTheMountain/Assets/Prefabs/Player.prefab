@@ -224,6 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ddd3ffd0c820274da789cd06cbbc245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprite: {fileID: 948541150264978158}
   speed: 7
   fallSpeed: 3
   fallPositionY: 0

@@ -8,6 +8,8 @@ using System;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
+    private Transform sprite;
+    [SerializeField]
     private float speed;
     [SerializeField]
     private float fallSpeed;
@@ -83,6 +85,26 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Move();
+        }
+    }
+
+    private void Update()
+    {
+        if (GetComponent<Rigidbody>().velocity.x > 0)
+        {
+            sprite.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        }
+        else if (GetComponent<Rigidbody>().velocity.x < 0)
+        {
+            sprite.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+        }
+        else if (GetComponent<Rigidbody>().velocity.z > 0)
+        {
+            sprite.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+        }
+        else if (GetComponent<Rigidbody>().velocity.z < 0)
+        {
+            sprite.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
         }
     }
 
