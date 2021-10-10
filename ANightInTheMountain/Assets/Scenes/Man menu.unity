@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.08957815, g: 0.09359572, b: 0.103773594, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4073d04897bea8d4981f077e7a7b3532, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 16bebcd6557a6854da7b24545b2c71f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6964f85ffc5a0784492d70c834b96c39, type: 2}
     - target: {fileID: 919132149155446097, guid: 16bebcd6557a6854da7b24545b2c71f8, type: 3}
       propertyPath: m_Name
       value: 'roca grande '
@@ -414,6 +418,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 16bebcd6557a6854da7b24545b2c71f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6964f85ffc5a0784492d70c834b96c39, type: 2}
     - target: {fileID: 919132149155446097, guid: 16bebcd6557a6854da7b24545b2c71f8, type: 3}
       propertyPath: m_Name
       value: roca grande  (1)
