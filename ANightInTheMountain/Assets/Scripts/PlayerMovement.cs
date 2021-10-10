@@ -117,6 +117,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (canMove)
         {
+            if (!setStopEvent)
+            {
+                setStopEvent = true;
+                setSlideEvent = false;
+                onPlayerStop.Invoke();
+            }
             if (movement.ReadValue<Vector2>().magnitude > .3f && !dead)
             {
                 if (!(movement.ReadValue<Vector2>().x > .2f && movement.ReadValue<Vector2>().y > .2f) &&
@@ -133,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
 
                     result += transform.position;
                     StartCoroutine(ActivateSphereCollider(result));
-                    setSlideEvent = false;
+                    
                     GetComponent<Rigidbody>().velocity = new Vector3(movement.ReadValue<Vector2>().x, 0, movement.ReadValue<Vector2>().y) * speed;
                 }
             }
@@ -142,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (moving)
             {
-                setStopEvent = false;
+                
                 if (!setSlideEvent)
                 {
                     setSlideEvent = true;
@@ -238,13 +244,14 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!dead)
         {
-
+            setStopEvent = false;
             if (Mathf.Abs(transform.position.x - collision.transform.position.x) <= 0.5f || Mathf.Abs(transform.position.z - collision.transform.position.z) <= 0.5f)
             {
                 DiedEvent(collision.gameObject);
             }
             else if (!setPosition)
             {
+                
                 Debug.Log("setting position");
                 transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
                 setPosition = true;
