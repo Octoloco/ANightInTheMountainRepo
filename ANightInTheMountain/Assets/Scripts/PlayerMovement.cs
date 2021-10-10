@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -36,7 +37,24 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         movement = playerInputActions.Player.Movement;
+        playerInputActions.Player.Pause.performed += Pause;
+        playerInputActions.Player.Pause.Enable();
         movement.Enable();
+    }
+
+    private void Pause(InputAction.CallbackContext obj)
+    {
+        if (GameObject.Find("PausePanel"))
+        {
+            if (GameObject.Find("PausePanel").GetComponent<PausePanel>().isShowing)
+            {
+                GameObject.Find("PausePanel").GetComponent<PausePanel>().Hide();
+            }
+            else
+            {
+                GameObject.Find("PausePanel").GetComponent<PausePanel>().Show();
+            }
+        }
     }
 
     private void OnDisable()
