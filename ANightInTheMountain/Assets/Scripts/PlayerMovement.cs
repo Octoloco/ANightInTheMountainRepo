@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     private bool falling;
     public bool falled;
 
+    bool setPosition = false;
+
     private PlayerInputActions playerInputActions;
     private InputAction movement;
     public bool Fallin => falling;
@@ -66,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = true;
     }
-  
+
     private void FixedUpdate()
     {
 
@@ -75,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (falling)
         {
-           
+
             Fall();
         }
         else
@@ -100,9 +102,9 @@ public class PlayerMovement : MonoBehaviour
                     canMove = false;
                     Vector3 result = movement.ReadValue<Vector2>().normalized * scaleSphereFactor;
 
-                   
+
                     result = new Vector3(result.x, 0, result.y);
-                   
+
                     result += transform.position;
                     StartCoroutine(ActivateSphereCollider(result));
 
@@ -114,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (moving)
             {
+                setPosition = false;
                 int layerMask = 1 << 8;
                 layerMask = ~layerMask;
                 RaycastHit hit;
@@ -198,17 +201,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!dead)
         {
-          
+
             if (Mathf.Abs(transform.position.x - collision.transform.position.x) <= 0.5f || Mathf.Abs(transform.position.z - collision.transform.position.z) <= 0.5f)
             {
                 DiedEvent(collision.gameObject);
+            }
+            else if (!setPosition)
+            {
+                Debug.Log("setting position");
+                transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
+                setPosition = true;
+                canMove = true;
             }
 
         }
     }
     private bool DiedEvent(GameObject collision)
     {
-        
+
         if (collision.gameObject.CompareTag("spike"))
         {
             onPlayerDied?.Invoke();
