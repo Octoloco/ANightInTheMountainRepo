@@ -26,6 +26,7 @@ public class GameManagerScript : MonoBehaviour
     {
         soulsController.soulsAdded = false;
         soulsController.soulsRemove = false;
+        soulsController.AddSouls(100);
         onFalling.AddListener(IceAnimation);
     }
     void Update()
