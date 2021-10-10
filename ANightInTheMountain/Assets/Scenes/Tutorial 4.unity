@@ -15599,9 +15599,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 852741302}
     m_Modifications:
     - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
       propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2106435975}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 901694649}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
       propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -15610,6 +15626,22 @@ PrefabInstance:
       propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 901694649}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ReloadCurrentScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4727938088544607611, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
       propertyPath: m_Name
       value: Door
