@@ -21,7 +21,6 @@ public class TextAnim : MonoBehaviour
 
     private IEnumerator TextAnimation(int index)
     {
-        Debug.Log(index);
         yield return new WaitForSeconds(timeBetweenLetters);
         if (index < text.Length) 
         {

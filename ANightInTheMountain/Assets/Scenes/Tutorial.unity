@@ -6290,6 +6290,7 @@ GameObject:
   - component: {fileID: 703594506}
   - component: {fileID: 703594505}
   - component: {fileID: 703594504}
+  - component: {fileID: 703594507}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -6420,9 +6421,21 @@ Transform:
   m_LocalPosition: {x: 0.5280447, y: 1.9403853, z: -1.8174534}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1936724756}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &703594507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703594503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca913ca26ffd43345ab69a949522d92c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &708129508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14314,7 +14327,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1936724756}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1563865614
 PrefabInstance:
@@ -18182,7 +18195,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2106435976}
-  - {fileID: 703594506}
   - {fileID: 1552611327}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -20213,6 +20225,10 @@ PrefabInstance:
     - target: {fileID: 194301208, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
       propertyPath: text
       value: I have to move... Can't stay here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544175196, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
+      propertyPath: closeTimer
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 862286442842417553, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
       propertyPath: m_Pivot.x

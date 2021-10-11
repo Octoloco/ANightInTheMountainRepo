@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float fallSpeed;
     [SerializeField]
+    private SoundEvent OrbSound;
+    [SerializeField]
     private float fallPositionY;
     private bool canMove;
     private bool dead;
@@ -128,6 +130,11 @@ public class PlayerMovement : MonoBehaviour
             GetComponentInChildren<Animator>().SetBool("Slide", false);
             soundEvent.StopClip();
         }
+    }
+
+    public void GrabOrbSound()
+    {
+        OrbSound.PlayClip();
     }
 
     private void Move()
