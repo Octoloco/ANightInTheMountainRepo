@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.99999946, g: 0, b: 0.99999946, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20210,25 +20210,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 193335459}
     m_Modifications:
-    - target: {fileID: 194301207, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 58.6
+    - target: {fileID: 1115067156, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 42.799988
       objectReference: {fileID: 0}
-    - target: {fileID: 194301207, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 194301207, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
+    - target: {fileID: 1115067156, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 194301208, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
-      propertyPath: text
-      value: I have to move... Can't stay here.
-      objectReference: {fileID: 0}
-    - target: {fileID: 1544175196, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
-      propertyPath: closeTimer
-      value: 4
+      value: 70.399994
       objectReference: {fileID: 0}
     - target: {fileID: 862286442842417553, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
       propertyPath: m_Pivot.x
