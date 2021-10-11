@@ -15705,6 +15705,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 852741302}
     m_Modifications:
     - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onFail.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
       propertyPath: onFail.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2106435975}
@@ -15713,13 +15721,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 901694649}
     - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
       propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2106435975}
+      objectReference: {fileID: 901694649}
     - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
       propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 901694649}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LevelLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759163340, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4727938088544607611, guid: 34fa8366f49043e4e9f1cc884fc6cad1, type: 3}
       propertyPath: m_Name
       value: Door
@@ -17462,7 +17486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057037939}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: 1.5, z: 4}
+  m_LocalPosition: {x: 5, y: 1.359, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1005155510}

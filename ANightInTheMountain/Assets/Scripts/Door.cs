@@ -13,8 +13,12 @@ public class Door : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (souls.CurrentSouls >= minimunSouls)
-            onSuccess.Invoke();
+        {
+            LevelLoader.instance.LoadNextLevel();
+        }
         else
-            onFail.Invoke();
+        {
+            LevelLoader.instance.ReloadCurrentScene();
+        }
     }
 }

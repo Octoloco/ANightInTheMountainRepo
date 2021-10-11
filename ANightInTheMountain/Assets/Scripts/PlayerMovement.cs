@@ -113,6 +113,17 @@ public class PlayerMovement : MonoBehaviour
         {
             sprite.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
         }
+
+        if (GetComponent<Rigidbody>().velocity.magnitude > .1f)
+        {
+            GetComponentInChildren<Animator>().SetBool("Idle", false);
+            GetComponentInChildren<Animator>().SetBool("Slide", true);
+        }
+        else
+        {
+            GetComponentInChildren<Animator>().SetBool("Idle", true);
+            GetComponentInChildren<Animator>().SetBool("Slide", false);
+        }
     }
 
     private void Move()
@@ -146,12 +157,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (moving)
             {
-                setStopEvent = false;
-                if (!setSlideEvent)
-                {
-                    setSlideEvent = true;
-                    onPlayerSlide.Invoke();
-                }
+                
                 setPosition = false;
                 int layerMask = 1 << 8;
                 layerMask = ~layerMask;
@@ -217,6 +223,13 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    IEnumerator deadOffset()
+    {
+        yield return new WaitForSeconds(2);
+        transform.GetChild(0).localPosition = new Vector3(0, transform.GetChild(0).localPosition.y - .5f, 0);
+        Destroy(this);
+    }
+
     private void Fall()
     {
         if (transform.position.y > fallPositionY)
@@ -236,11 +249,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!setStopEvent)
-        {
-            setStopEvent = true;
-            onPlayerStop.Invoke();
-        }
+        
         if (!dead)
         {
 
@@ -263,11 +272,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("spike"))
         {
+            StartCoroutine(deadOffset());
             onPlayerSpike.Invoke();
             onPlayerDied?.Invoke();
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
             Destroy(GetComponent<Rigidbody>());
-            Destroy(this);
+            
             return true;
         }
         return false;
@@ -279,7 +289,7 @@ public class PlayerMovement : MonoBehaviour
             canMove = true;
         }
 
-        if (GetComponent<Rigidbody>().velocity.magnitude <= .15f)
+        if (GetComponent<Rigidbody>().velocity.magnitude <= .1f)
         {
             moving = false;
         }
