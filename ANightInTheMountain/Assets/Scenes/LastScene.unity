@@ -716,7 +716,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2045059719}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3208721
+  m_Size: 0.32087207
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -793,7 +793,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -115, y: 154}
+  m_AnchoredPosition: {x: -114.99997, y: 154}
   m_SizeDelta: {x: 57.52059, y: 20.084103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175059847
@@ -13502,7 +13502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bananasaan
+  m_text: 'Arantza Torres
 
     (Artist)'
   m_isRightToLeft: 0
