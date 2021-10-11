@@ -18425,6 +18425,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 193335459}
     m_Modifications:
+    - target: {fileID: 194301208, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
+      propertyPath: text
+      value: Uff! For a moment I thought I was going crazy!
+      objectReference: {fileID: 0}
+    - target: {fileID: 194301209, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
+      propertyPath: m_text
+      value: Wow! Those ORBS are something! For a moment I thought I was going crazy!
+      objectReference: {fileID: 0}
     - target: {fileID: 862286442842417553, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
