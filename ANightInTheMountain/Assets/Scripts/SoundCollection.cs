@@ -18,7 +18,16 @@ public class SoundCollection : ScriptableObject
         }
       
     }
+    public void PlayAudioClipUnitlEndByIndex(AudioSource source, int index)
+    {
 
+        if (audioClips != null && audioClips.Count > 0 && source != null&&!source.isPlaying)
+        {
+            source.loop = true;
+            source.clip = audioClips[index];
+            source.Play();
+        }
+    }
     public void PlayOnDisable(int index, Transform transform)
     {
         AudioSource.PlayClipAtPoint(audioClips[index], transform.position);

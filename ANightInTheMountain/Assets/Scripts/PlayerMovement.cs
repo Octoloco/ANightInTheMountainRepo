@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     bool setSlideEvent;
     bool setStopEvent;
 
+    [SerializeField] SoundEvent soundEvent;
+
     private void Awake()
     {
         playerInputActions = new PlayerInputActions();
@@ -118,11 +120,13 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponentInChildren<Animator>().SetBool("Idle", false);
             GetComponentInChildren<Animator>().SetBool("Slide", true);
+            soundEvent.PlayClipUntilEndByIndex(0);
         }
         else
         {
             GetComponentInChildren<Animator>().SetBool("Idle", true);
             GetComponentInChildren<Animator>().SetBool("Slide", false);
+            soundEvent.StopClip();
         }
     }
 
@@ -276,6 +280,7 @@ public class PlayerMovement : MonoBehaviour
             onPlayerSpike.Invoke();
             onPlayerDied?.Invoke();
             transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), transform.position.y, Mathf.RoundToInt(transform.position.z));
+            transform.GetComponentInChildren<Animator>().SetTrigger("Pikes");
             Destroy(GetComponent<Rigidbody>());
             
             return true;

@@ -34,7 +34,10 @@ public class SoundEvent : MonoBehaviour
         collection.PlayAudioClip( source, index);
     }
 
-
+    public void PlayClipUntilEndByIndex(int index)
+    {
+        collection.PlayAudioClipUnitlEndByIndex(source, index);
+    }
     public void PlayClipByIndex(int index)
     {
        
@@ -49,6 +52,7 @@ public class SoundEvent : MonoBehaviour
     public void StopClip()
     {
         source.Stop();
+        source.loop = false;
     }
 
 }
