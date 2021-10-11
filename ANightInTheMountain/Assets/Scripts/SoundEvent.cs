@@ -38,6 +38,8 @@ public class SoundEvent : MonoBehaviour
     {
         collection.PlayAudioClipUnitlEndByIndex(source, index);
     }
+
+    
     public void PlayClipByIndex(int index)
     {
        

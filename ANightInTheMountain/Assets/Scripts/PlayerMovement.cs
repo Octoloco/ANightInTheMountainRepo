@@ -243,6 +243,8 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            soundEvent.StopClip();
+            soundEvent.PlayClipByIndex(2);
             falling = false;
             onPlayerDied?.Invoke();
             falled = true;
@@ -276,6 +278,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (collision.gameObject.CompareTag("spike"))
         {
+            soundEvent.StopClip();
+            soundEvent.PlayClipByIndex(1);
             StartCoroutine(deadOffset());
             onPlayerSpike.Invoke();
             onPlayerDied?.Invoke();

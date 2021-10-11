@@ -11,6 +11,6 @@ public class SoulObject : MonoBehaviour
     {
         soulsController.AddSouls();
         Destroy(gameObject.transform.parent.gameObject, 0.25f);
-        soundEvent.PlayClipByIndex(4);
+        soundEvent.PlayClipByIndex(3);
     }
 }
