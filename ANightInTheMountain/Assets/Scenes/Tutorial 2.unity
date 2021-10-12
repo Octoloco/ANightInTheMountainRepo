@@ -8132,11 +8132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1782903615415231105, guid: e4c3003fec770ad42915e5b2a763d119, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.95
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1782903615415231105, guid: e4c3003fec770ad42915e5b2a763d119, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.6
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1782903615415231105, guid: e4c3003fec770ad42915e5b2a763d119, type: 3}
       propertyPath: m_LocalPosition.z
@@ -17122,7 +17122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1782903615415231105, guid: e4c3003fec770ad42915e5b2a763d119, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.95
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1782903615415231105, guid: e4c3003fec770ad42915e5b2a763d119, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18007,6 +18007,14 @@ PrefabInstance:
     - target: {fileID: 194301208, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
       propertyPath: text
       value: I have to be careful, wouldn't want to DIE here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115067156, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 42.799988
+      objectReference: {fileID: 0}
+    - target: {fileID: 1115067156, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70.399994
       objectReference: {fileID: 0}
     - target: {fileID: 1544175196, guid: 2ea4ed78dcbcae94aab223b762f200f0, type: 3}
       propertyPath: closeTimer
